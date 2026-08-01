@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breakwater Larantuka — Menjaga Garis Pantai, Menjaga Laut dan Keselamatan Kita</title>
+<meta name="description" content="Storymap: fungsi breakwater, sejarah abrasi dan pembangunan pengaman Pantai Larantuka 2008–2025, serta cara menjaganya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;600;700;800;900&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0B1512;
+  --foam:#EAF0EE;
+  --foam-dim:#D7E3DF;
+  --navy:#0E2A35;
+  --navy-2:#163C48;
+  --navy-3:#1E4E5C;
+  --teal:#2F7A73;
+  --teal-soft:#9FC7BE;
+  --rust:#A84A22;
+  --rust-soft:#D98A5F;
+  --sand:#CBB889;
+  --sand-soft:#E7DCC0;
+  --line: rgba(234,240,238,0.16);
+  --line-dark: rgba(11,21,18,0.14);
+  --maxw: 1180px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important;}
+}
+body{
+  margin:0;
+  background:var(--foam);
+  color:var(--ink);
+  font-family:'Public Sans', sans-serif;
+  font-size:17px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,.display{
+  font-family:'Big Shoulders Display', sans-serif;
+  text-transform:uppercase;
+  letter-spacing:0.01em;
+  font-weight:800;
+  line-height:0.94;
+  margin:0;
+}
+.eyebrow{
+  font-family:'IBM Plex Mono', monospace;
+  font-size:12.5px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--rust);
+  font-weight:600;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:14px;
+}
+.eyebrow::before{
+  content:"";
+  width:22px;height:2px;background:var(--rust);display:inline-block;
+}
+.section{
+  padding:100px 24px;
+  position:relative;
+}
+.section-inner{
+  max-width:var(--maxw);
+  margin:0 auto;
+}
+.dark{background:var(--navy); color:var(--foam);}
+.dark .eyebrow{color:var(--sand);}
+.dark .eyebrow::before{background:var(--sand);}
+p{margin:0 0 1em 0;}
+.lede{font-size:1.22em; max-width:62ch;}
+a{color:inherit;}
+
+/* ---------- reveal on scroll ---------- */
+.reveal{opacity:0; transform:translateY(28px); transition:opacity .8s ease, transform .8s ease;}
+.reveal.is-visible{opacity:1; transform:translateY(0);}
+
+/* ---------- top progress bar ---------- */
+#progress{
+  position:fixed; top:0; left:0; height:3px; width:0%;
+  background:linear-gradient(90deg,var(--rust),var(--sand));
+  z-index:999; transition:width .08s linear;
+}
+nav.topnav{
+  position:fixed; top:0; left:0; right:0; z-index:998;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:16px 24px; mix-blend-mode:normal;
+  font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:.08em;
+  color:var(--foam); pointer-events:none;
+}
+nav.topnav span{opacity:.75}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100svh;
+  background:
+    radial-gradient(ellipse at 30% 0%, rgba(47,122,115,0.35), transparent 55%),
+    linear-gradient(180deg,#0B222C 0%, #0E2A35 55%, #0A1E27 100%);
+  color:var(--foam);
+  display:flex; flex-direction:column; justify-content:flex-end;
+  position:relative; overflow:hidden;
+  padding:120px 24px 0;
+}
+.hero-waves{position:absolute; left:0; right:0; bottom:0; width:100%; height:46%; z-index:1;}
+.hero-content{position:relative; z-index:2; max-width:var(--maxw); margin:0 auto; width:100%; padding-bottom:64px;}
+.hero h1{font-size:clamp(3.4rem, 11vw, 8.6rem); color:var(--foam);}
+.hero h1 em{font-style:normal; color:transparent; -webkit-text-stroke:1.5px var(--sand);}
+.hero .tag{
+  font-family:'IBM Plex Mono', monospace; text-transform:uppercase; letter-spacing:.16em;
+  font-size:13px; color:var(--teal-soft); margin-top:22px; max-width:46ch;
+}
+.hero .kkn{
+  position:absolute; top:24px; right:24px; z-index:3;
+  font-family:'IBM Plex Mono', monospace; font-size:11px; letter-spacing:.1em;
+  text-align:right; color:var(--foam-dim); line-height:1.5; text-transform:uppercase;
+}
+.scrolldown{
+  position:absolute; bottom:22px; left:24px; z-index:3;
+  font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--foam-dim);
+  display:flex; align-items:center; gap:8px; letter-spacing:.1em;
+}
+.scrolldown .bar{width:1px;height:34px;background:var(--foam-dim); position:relative; overflow:hidden;}
+.scrolldown .bar::after{content:"";position:absolute; top:-100%; left:0; width:100%; height:100%; background:var(--rust); animation:dropbar 1.8s ease-in-out infinite;}
+@keyframes dropbar{0%{top:-100%}60%{top:100%}100%{top:100%}}
+
+/* ---------- Problem hooks ---------- */
+.hook-grid{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line);
+  border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-top:48px;
+}
+.hook{background:var(--navy); padding:34px 24px 40px; min-height:230px; display:flex; flex-direction:column; justify-content:space-between;}
+.hook .num{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--rust-soft);}
+.hook .txt{font-family:'Big Shoulders Display',sans-serif; font-size:1.5rem; text-transform:none; font-weight:700; letter-spacing:0; margin-top:18px;}
+@media (max-width:900px){.hook-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:520px){.hook-grid{grid-template-columns:1fr;}}
+
+/* ---------- definition / media rows ---------- */
+.mediarow{
+  display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;
+}
+.mediarow.rev{grid-template-columns:0.95fr 1.05fr;}
+.mediarow.rev .figure{order:2;}
+@media (max-width:860px){
+  .mediarow, .mediarow.rev{grid-template-columns:1fr;}
+  .mediarow.rev .figure{order:0;}
+}
+.figure{position:relative;}
+.figure img, .figure video{width:100%; display:block; border-radius:2px;}
+.figure .cap{font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.05em; margin-top:10px; opacity:.62;}
+.imgwrap{position:relative; overflow:hidden; background:var(--sand-soft); aspect-ratio:4/3; border:1px solid var(--line-dark);}
+.imgwrap img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+.imgwrap.dark-frame{background:var(--navy-2); border-color:var(--line);}
+.img-missing{display:flex; align-items:center; justify-content:center; text-align:center; padding:20px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--rust); background:repeating-linear-gradient(135deg, var(--sand-soft), var(--sand-soft) 10px, #f2ead4 10px, #f2ead4 20px);}
+.imgwrap.dark-frame .img-missing{color:var(--sand); background:repeating-linear-gradient(135deg, var(--navy-2), var(--navy-2) 10px, var(--navy-3) 10px, var(--navy-3) 20px);}
+
+/* ---------- function grid (4 fungsi) ---------- */
+.fn-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:56px; border-top:1px solid var(--line-dark);}
+.fn{padding:34px 22px; border-right:1px solid var(--line-dark); border-bottom:1px solid var(--line-dark);}
+.fn:last-child{border-right:none;}
+.fn svg{width:40px;height:40px; stroke:var(--rust);}
+.fn h3{font-size:1.32rem; margin-top:20px; text-transform:none; font-weight:700;}
+.fn p{font-size:.96em; opacity:.82; margin-top:10px;}
+@media (max-width:900px){.fn-grid{grid-template-columns:repeat(2,1fr);} .fn:nth-child(2n){border-right:none;}}
+@media (max-width:520px){.fn-grid{grid-template-columns:1fr;} .fn{border-right:none;}}
+
+/* ---------- mechanism (6 peran batu) ---------- */
+.mech-intro{max-width:70ch;}
+.mech-image{margin:44px 0 8px; border:1px solid var(--line-dark);}
+.mech-image img{width:100%; display:block;}
+.mech-list{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-dark); margin-top:8px;}
+.mech-item{background:var(--foam); padding:24px 22px;}
+.mech-item .n{font-family:'IBM Plex Mono',monospace; color:var(--rust); font-size:12px;}
+.mech-item h4{font-family:'Big Shoulders Display',sans-serif; font-weight:700; font-size:1.12rem; text-transform:none; margin:10px 0 8px;}
+.mech-item p{font-size:.92em; opacity:.85; margin:0;}
+@media (max-width:860px){.mech-list{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:560px){.mech-list{grid-template-columns:1fr;}}
+
+/* ---------- chart / scrollytelling ---------- */
+.chart-wrap{display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:start;}
+@media (max-width:900px){.chart-wrap{grid-template-columns:1fr;}}
+.chart-sticky{position:sticky; top:14vh; height:72vh; min-height:420px;}
+.chart-sticky svg{width:100%; height:100%;}
+.chart-legend{display:flex; gap:22px; margin-top:14px; font-family:'IBM Plex Mono',monospace; font-size:11.5px; flex-wrap:wrap;}
+.chart-legend span{display:flex; align-items:center; gap:7px;}
+.chart-legend i{width:14px;height:3px;display:inline-block;}
+.steps{display:flex; flex-direction:column; gap:38vh; padding-top:6vh; padding-bottom:20vh;}
+@media (max-width:900px){.steps{gap:12vh; padding-top:2vh;}}
+.step{
+  background:var(--navy-2); border-left:3px solid var(--sand-soft); padding:22px 26px;
+  opacity:.35; transform:translateX(6px); transition:opacity .4s ease, transform .4s ease, border-color .4s ease;
+  max-width:46ch;
+}
+.step.active{opacity:1; transform:translateX(0); border-left-color:var(--rust);}
+.step .yr{font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--sand); letter-spacing:.08em;}
+.step h4{font-family:'Big Shoulders Display',sans-serif; font-size:1.5rem; text-transform:none; font-weight:700; margin:8px 0 8px;}
+.step p{font-size:.95em; opacity:.88;}
+.seg{stroke-linecap:round; fill:none;}
+.marker{opacity:0; transition:opacity .35s ease;}
+.marker.on{opacity:1;}
+.chart-caption{font-family:'IBM Plex Mono',monospace; font-size:11.5px; opacity:.65; margin-top:8px;}
+
+/* ---------- 2019 turning point ---------- */
+.timeline-2020{margin-top:40px; display:grid; gap:0; border-top:1px solid var(--line-dark);}
+.tl-row{display:grid; grid-template-columns:110px 1fr; gap:24px; padding:20px 0; border-bottom:1px solid var(--line-dark);}
+.tl-row .yr{font-family:'Big Shoulders Display',sans-serif; font-size:1.9rem; font-weight:800; color:var(--rust);}
+.tl-row .len{font-family:'IBM Plex Mono',monospace; font-size:12px; opacity:.6; display:block; margin-top:2px;}
+.tl-row .desc{font-size:.98em;}
+.tl-row .desc b{font-weight:700;}
+.factbox{background:var(--sand-soft); border:1px solid var(--line-dark); padding:22px 24px; margin-top:28px; font-size:.92em;}
+.factbox .eyebrow{color:var(--rust);}
+
+/* ---------- fakta lapangan / reasons ---------- */
+.reason-list{list-style:none; margin:24px 0 0; padding:0; display:grid; gap:0;}
+.reason-list li{padding:16px 0; border-bottom:1px solid var(--line-dark); display:flex; gap:16px; align-items:flex-start;}
+.reason-list li::before{content:"—"; color:var(--rust); font-weight:700; flex-shrink:0;}
+
+/* ---------- damage cascade ---------- */
+.cascade{display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:52px; counter-reset:step;}
+.cas{border-top:3px solid var(--rust); padding:20px 20px 0 0; position:relative;}
+.cas::before{counter-increment:step; content:counter(step); font-family:'Big Shoulders Display',sans-serif; font-size:2.6rem; font-weight:800; color:var(--rust-soft); display:block; margin-bottom:10px;}
+.cas h4{font-size:1.05rem; text-transform:none; font-weight:700; margin-bottom:8px;}
+.cas p{font-size:.9em; opacity:.85;}
+.cas-arrow{position:absolute; right:-14px; top:8px; font-size:20px; color:var(--rust-soft); display:none;}
+@media (min-width:860px){.cas-arrow{display:block;}}
+@media (max-width:860px){.cascade{grid-template-columns:1fr 1fr; gap:24px;}}
+@media (max-width:520px){.cascade{grid-template-columns:1fr;}}
+.chain-note{margin-top:30px; padding:20px 22px; background:rgba(168,74,34,0.08); border-left:3px solid var(--rust); font-size:.95em;}
+
+/* ---------- dampak two column ---------- */
+.impact-cols{display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:44px;}
+@media (max-width:760px){.impact-cols{grid-template-columns:1fr;}}
+.impact-col h3{font-size:1.5rem; text-transform:none; font-weight:700; margin-bottom:16px; padding-bottom:12px; border-bottom:2px solid var(--sand);}
+.impact-col.danger h3{border-bottom-color:var(--rust);}
+.impact-col ul{list-style:none; margin:0; padding:0;}
+.impact-col li{padding:12px 0; border-bottom:1px solid var(--line-dark); font-size:.95em; display:flex; gap:12px;}
+.impact-col li::before{content:"▸"; color:var(--teal);}
+.impact-col.danger li::before{color:var(--rust);}
+
+/* ---------- action cards ---------- */
+.action-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:48px;}
+@media (max-width:900px){.action-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:520px){.action-grid{grid-template-columns:1fr;}}
+.action{background:var(--foam); border:1px solid var(--line-dark); padding:26px 22px; display:flex; flex-direction:column; gap:14px;}
+.action svg{width:32px;height:32px; stroke:var(--teal);}
+.action h4{font-size:1.12rem; text-transform:none; font-weight:700;}
+.action p{font-size:.9em; opacity:.82; margin:0;}
+
+/* ---------- first aid steps ---------- */
+.aid-steps{counter-reset:aid; margin-top:40px; display:grid; gap:0;}
+.aid{display:grid; grid-template-columns:70px 1fr; gap:22px; padding:22px 0; border-bottom:1px solid var(--line);}
+.aid::before{counter-increment:aid; content:"0" counter(aid); font-family:'IBM Plex Mono',monospace; font-size:14px; color:var(--sand); align-self:start; padding-top:4px;}
+.aid h4{font-size:1.2rem; text-transform:none; font-weight:700; margin-bottom:6px;}
+.aid p{font-size:.94em; opacity:.85;}
+
+/* ---------- APO comparison ---------- */
+.apo-grid{display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:44px;}
+@media (max-width:760px){.apo-grid{grid-template-columns:1fr;}}
+.apo-card{background:var(--foam); border:1px solid var(--line-dark); padding:28px;}
+.apo-card .tagline{font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.06em; color:var(--rust); text-transform:uppercase;}
+.apo-card h3{font-size:1.7rem; text-transform:none; font-weight:700; margin:10px 0 14px;}
+.apo-card ul{padding-left:18px; margin:14px 0 0; font-size:.92em;}
+.apo-card li{margin-bottom:8px;}
+.apo-stat{display:flex; gap:26px; margin-top:20px; font-family:'IBM Plex Mono',monospace;}
+.apo-stat div b{display:block; font-family:'Big Shoulders Display',sans-serif; font-size:1.8rem; font-weight:800; color:var(--ink);}
+.apo-stat div small{font-size:10.5px; opacity:.6; letter-spacing:.05em; text-transform:uppercase;}
+
+/* ---------- footer ---------- */
+footer{background:var(--navy); color:var(--foam-dim); padding:70px 24px 40px; font-size:.9em;}
+.footer-inner{max-width:var(--maxw); margin:0 auto; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:40px;}
+@media (max-width:760px){.footer-inner{grid-template-columns:1fr; gap:28px;}}
+footer h4{font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--sand); margin-bottom:14px;}
+footer .credit{font-family:'Big Shoulders Display',sans-serif; font-size:1.6rem; text-transform:none; font-weight:700; color:var(--foam); margin-bottom:10px;}
+footer ul{list-style:none; margin:0; padding:0;}
+footer li{margin-bottom:8px; font-size:.9em; opacity:.8;}
+.bottom-rule{max-width:var(--maxw); margin:44px auto 0; padding-top:20px; border-top:1px solid var(--line); font-family:'IBM Plex Mono',monospace; font-size:11px; opacity:.55; display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;}
+
+.center-cta{margin-top:56px; text-align:center;}
+.btn{
+  display:inline-block; padding:14px 30px; background:var(--rust); color:var(--foam);
+  font-family:'IBM Plex Mono',monospace; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase;
+  text-decoration:none; border:none; cursor:pointer;
+}
+.btn:hover{background:var(--rust-soft);}
+
+.h2{font-size:clamp(2.2rem, 5vw, 3.6rem); margin-bottom:22px;}
+</style>
+</head>
+<body>
+
+<div id="progress"></div>
+<nav class="topnav"><span>KKN-PPM UGM · ROMANTIKA LARANTUKA</span><span id="navyear">2008</span></nav>
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <div class="kkn">KKN‑PPM UGM<br>Romantika Larantuka<br>Flores Timur, NTT</div>
+  <svg class="hero-waves" viewBox="0 0 1200 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,120 C150,80 300,160 450,120 C600,80 750,160 900,120 C1050,80 1150,110 1200,110 L1200,260 L0,260 Z" fill="#163C48" opacity="0.9"/>
+    <path d="M0,160 C180,130 320,190 480,160 C640,130 780,190 960,160 C1080,140 1150,150 1200,150 L1200,260 L0,260 Z" fill="#1E4E5C" opacity="0.85"/>
+    <path d="M0,200 C200,180 340,220 520,200 C700,180 840,220 1000,200 C1100,190 1160,195 1200,195 L1200,260 L0,260 Z" fill="#0E2A35"/>
+  </svg>
+  <div class="hero-content">
+    <div class="tag">Struktur pelindung pantai — apa itu, mengapa penting, dan bagaimana menjaganya</div>
+    <h1>BREAK<br><em>WATER</em></h1>
+    <div class="tag" style="margin-top:26px; color:var(--sand);">Menjaga breakwater, menjaga laut dan keselamatan kita</div>
+  </div>
+  <div class="scrolldown"><div class="bar"></div>GULIR</div>
+</section>
+
+<!-- ============ PERNAHKAH MENGALAMI ============ -->
+<section class="section dark">
+  <div class="section-inner reveal">
+    <div class="eyebrow">Sebelum Kita Mulai</div>
+    <h2 class="h2">Pernahkah mengalami hal‑hal ini?</h2>
+    <p class="lede" style="opacity:.85;">Bagi warga dan nelayan yang tinggal di bibir Pantai Larantuka, empat hal ini bukan cerita asing. Justru dari sinilah cerita breakwater dimulai.</p>
+  </div>
+  <div class="hook-grid reveal">
+    <div class="hook"><div class="num">01</div><div class="txt">Ombak besar saat kapal akan bersandar</div></div>
+    <div class="hook"><div class="num">02</div><div class="txt">Pantai yang semakin terkikis dari tahun ke tahun</div></div>
+    <div class="hook"><div class="num">03</div><div class="txt">Dermaga dan fasilitas pesisir yang rusak</div></div>
+    <div class="hook"><div class="num">04</div><div class="txt">Batu pemecah ombak yang mulai berkurang</div></div>
+  </div>
+</section>
+
+<!-- ============ APA ITU BREAKWATER ============ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="mediarow">
+      <div>
+        <div class="eyebrow">Mengenal Strukturnya</div>
+        <h2 class="h2">Apa itu breakwater?</h2>
+        <p class="lede">Breakwater — atau yang biasa disebut alat/pengaman pemecah ombak — adalah prasarana yang dibangun di depan garis pantai untuk memecah gelombang laut sekaligus menyerap sebagian besar energinya sebelum mencapai daratan.</p>
+        <p>Strukturnya terlihat sederhana: susunan batu besar, beton, atau material lain yang ditata berlapis mengikuti bentuk garis pantai. Tapi di balik kesederhanaan itu, ada rekayasa yang bekerja setiap kali gelombang datang — menahan, memecah, dan menyebarkan energi laut agar yang sampai ke daratan hanya sisa yang jinak.</p>
+      </div>
+      <div class="figure">
+        <div class="imgwrap dark-frame">
+          <img src="assets/pembangunanpupr1.jpg" alt="Pembangunan pengaman Pantai Larantuka oleh PUPR" onerror="this.parentElement.innerHTML='<div class=\'img-missing\'>assets/pembangunanpupr1.jpg<br>— letakkan foto pembangunan di sini —</div>'">
+        </div>
+        <div class="cap">Pengaman Pantai Larantuka, dibangun bertahap oleh Kementerian PUPR</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KENAPA DIBANGUN ============ -->
+<section class="section dark">
+  <div class="section-inner reveal">
+    <div class="eyebrow">Latar Belakang</div>
+    <h2 class="h2">Kenapa Larantuka membutuhkannya</h2>
+    <p class="lede" style="opacity:.9;">Di kaki Gunung Ile Mandiri, dengan pemandangan Pulau Adonara di kejauhan, Pantai Larantuka adalah salah satu sudut paling memesona di Flores Timur — terutama saat matahari terbit dan terbenam. Tapi keindahan itu berbanding lurus dengan kerentanannya.</p>
+    <p style="opacity:.85; max-width:70ch;">Pada bulan‑bulan tertentu, terutama Desember, ombak pasang datang menghantam garis pantai dengan keras. Terjangan ini tidak hanya mengikis daratan — ia merusak fasilitas milik masyarakat dan rumah‑rumah penduduk yang tinggal persis di bibir pantai. Ancaman abrasi inilah yang akhirnya mendorong pembangunan pengaman pantai di Larantuka, dikerjakan bertahap sejak 2016 oleh Kementerian PUPR melalui Balai Wilayah Sungai Nusa Tenggara II.</p>
+  </div>
+</section>
+
+<!-- ============ 4 FUNGSI ============ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="eyebrow">Empat Peran Utama</div>
+    <h2 class="h2">Apa yang sebenarnya dikerjakan breakwater</h2>
+    <div class="fn-grid">
+      <div class="fn">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M2 15c2 0 2-3 4-3s2 3 4 3 2-3 4-3 2 3 4 3 2-3 4-3" stroke-linecap="round"/><path d="M2 20c2 0 2-2.5 4-2.5s2 2.5 4 2.5 2-2.5 4-2.5 2 2.5 4 2.5 2-2.5 4-2.5" stroke-linecap="round" opacity=".5"/></svg>
+        <h3>Meredam gelombang</h3>
+        <p>Mengurangi energi ombak besar sebelum mencapai daratan dan tambak.</p>
+      </div>
+      <div class="fn">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3v13" stroke-linecap="round"/><path d="M6 8h12l-2 4H8z"/><path d="M5 21c1.5 1 3.5 1 5 0s3.5-1 5 0 3.5 1 5 0" stroke-linecap="round"/></svg>
+        <h3>Kapal aman bersandar</h3>
+        <p>Membuat area tambatan tenang sehingga kapal tidak terhempas gelombang.</p>
+      </div>
+      <div class="fn">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M12 3l7 3v6c0 5-3 8-7 9-4-1-7-4-7-9V6z"/></svg>
+        <h3>Mencegah abrasi</h3>
+        <p>Melindungi garis pantai dan tambak warga dari pengikisan air laut yang terus‑menerus.</p>
+      </div>
+      <div class="fn">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2" stroke-linecap="round"/></svg>
+        <h3>Jalur melaut aman</h3>
+        <p>Menjaga alur keluar‑masuk kapal tetap tenang, terprediksi, dan tidak berbahaya.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6 MEKANISME BATU ============ -->
+<section class="section dark">
+  <div class="section-inner reveal">
+    <div class="eyebrow">Cara Kerjanya, Batu demi Batu</div>
+    <h2 class="h2">Bagaimana susunan batu ini benar‑benar bekerja</h2>
+    <p class="lede mech-intro" style="opacity:.9;">Dari luar, breakwater terlihat seperti tumpukan batu yang berantakan. Padahal ketidakteraturan itu justru disengaja — enam mekanisme berikut menjelaskan kenapa.</p>
+    <div class="mech-image">
+      <img src="assets/mekanisme-batu.png" alt="Ilustrasi enam mekanisme kerja susunan batu breakwater" style="width:100%;display:block;">
+    </div>
+    <div class="mech-list">
+      <div class="mech-item"><div class="n">01</div><h4>Batu sebagai "rem" gelombang</h4><p>Gelombang yang datang dipecah ke berbagai arah oleh susunan batu yang tidak rata, sehingga kehilangan sebagian besar energinya sebelum sisanya memantul kembali.</p></div>
+      <div class="mech-item"><div class="n">02</div><h4>Batu sebagai "labirin" air</h4><p>Air yang lolos di celah‑celah batu dipaksa berputar dan bergesekan dengan permukaan batu, membuat kecepatannya terus menurun.</p></div>
+      <div class="mech-item"><div class="n">03</div><h4>Batu sebagai bantalan beton</h4><p>Batu paling depan menyerap benturan pertama, sehingga struktur beton di belakangnya hanya menerima sisa energi yang jauh lebih kecil.</p></div>
+      <div class="mech-item"><div class="n">04</div><h4>Menjaga tanah di bawah tetap utuh</h4><p>Armor rock, underlayer, dan filter fabric menahan lapisan tanah pondasi agar tidak ikut tersedot keluar setiap kali ombak surut.</p></div>
+      <div class="mech-item"><div class="n">05</div><h4>Menyebar energi, bukan memusatkannya</h4><p>Bentuk batu yang tidak rata membuat aliran energi gelombang tersebar ke banyak arah, bukan menumpuk pada satu titik struktur.</p></div>
+      <div class="mech-item"><div class="n">06</div><h4>Mengurangi tinggi cipratan</h4><p>Karena energi sudah diserap sejak benturan pertama, limpasan air ke belakang struktur (wave run‑up) berkurang — daratan di baliknya lebih terlindungi.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TIMELINE GARIS PANTAI (SCROLLYTELLING) ============ -->
+<section class="section" id="chart-section">
+  <div class="section-inner reveal">
+    <div class="eyebrow">2008 – 2025</div>
+    <h2 class="h2">Perjalanan garis pantai Larantuka</h2>
+    <p class="lede">Setiap tahun bercerita: kapan pantai mundur dimakan abrasi, dan kapan ia mulai maju kembali sejak breakwater dibangun. Gulir untuk mengikuti garis waktunya.</p>
+  </div>
+  <div class="section-inner chart-wrap" style="margin-top:20px;">
+    <div class="chart-sticky reveal">
+      <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+        <line x1="60" y1="260" x2="940" y2="260" stroke="var(--line-dark)" stroke-width="1" stroke-dasharray="2 4"/>
+        <text x="60" y="252" font-family="IBM Plex Mono" font-size="11" fill="var(--ink)" opacity=".5">GARIS PANTAI 2008</text>
+
+        <!-- combined segments -->
+        <path class="seg" id="seg-c0" d="M60,260 L185.7,276" stroke="var(--sand)" stroke-width="4" stroke-dasharray="140" stroke-dashoffset="140"/>
+        <path class="seg" id="seg-c1" d="M185.7,276 L311.4,260" stroke="var(--sand)" stroke-width="4" stroke-dasharray="140" stroke-dashoffset="140"/>
+        <path class="seg" id="seg-c2" d="M311.4,260 L437.1,284" stroke="var(--rust)" stroke-width="4" stroke-dasharray="140" stroke-dashoffset="140"/>
+
+        <!-- west segments -->
+        <path class="seg" id="seg-w0" d="M437.1,284 L562.9,244" stroke="var(--teal)" stroke-width="4" stroke-dasharray="150" stroke-dashoffset="150"/>
+        <path class="seg" id="seg-w1" d="M562.9,244 L688.6,136" stroke="var(--teal)" stroke-width="4" stroke-dasharray="180" stroke-dashoffset="180"/>
+        <path class="seg" id="seg-w2" d="M688.6,136 L814.3,133.6" stroke="var(--teal)" stroke-width="4" stroke-dasharray="126" stroke-dashoffset="126"/>
+        <path class="seg" id="seg-w3" d="M814.3,133.6 L940,132" stroke="var(--teal)" stroke-width="4" stroke-dasharray="126" stroke-dashoffset="126"/>
+
+        <!-- east segments -->
+        <path class="seg" id="seg-e0" d="M437.1,284 L562.9,284" stroke="var(--rust-soft)" stroke-width="3" stroke-dasharray="126" stroke-dashoffset="126"/>
+        <path class="seg" id="seg-e1" d="M562.9,284 L688.6,284" stroke="var(--rust-soft)" stroke-width="3" stroke-dasharray="126" stroke-dashoffset="126"/>
+        <path class="seg" id="seg-e2" d="M688.6,284 L814.3,276" stroke="var(--rust-soft)" stroke-width="3" stroke-dasharray="126" stroke-dashoffset="126"/>
+        <path class="seg" id="seg-e3" d="M814.3,276 L940,272" stroke="var(--rust-soft)" stroke-width="3" stroke-dasharray="126" stroke-dashoffset="126"/>
+
+        <!-- markers -->
+        <g class="marker" id="m-2008"><circle cx="60" cy="260" r="6" fill="var(--ink)"/><text x="60" y="290" font-family="IBM Plex Mono" font-size="13" fill="var(--ink)" text-anchor="middle">2008</text></g>
+        <g class="marker" id="m-2013"><circle cx="185.7" cy="276" r="6" fill="var(--sand)"/><text x="185.7" y="306" font-family="IBM Plex Mono" font-size="13" fill="var(--ink)" text-anchor="middle">2013</text></g>
+        <g class="marker" id="m-2016"><circle cx="311.4" cy="260" r="6" fill="var(--sand)"/><text x="311.4" y="238" font-family="IBM Plex Mono" font-size="13" fill="var(--ink)" text-anchor="middle">2016</text></g>
+        <g class="marker" id="m-2017"><circle cx="437.1" cy="284" r="7" fill="var(--rust)"/><text x="437.1" y="314" font-family="IBM Plex Mono" font-size="13" fill="var(--rust)" text-anchor="middle" font-weight="600">2017</text></g>
+        <g class="marker" id="m-2019"><circle cx="562.9" cy="244" r="6" fill="var(--teal)"/><text x="562.9" y="222" font-family="IBM Plex Mono" font-size="13" fill="var(--teal)" text-anchor="middle" font-weight="600">2019</text><circle cx="562.9" cy="284" r="5" fill="var(--rust-soft)"/></g>
+        <g class="marker" id="m-2021"><circle cx="688.6" cy="136" r="6" fill="var(--teal)"/><text x="688.6" y="115" font-family="IBM Plex Mono" font-size="13" fill="var(--teal)" text-anchor="middle" font-weight="600">2021</text><circle cx="688.6" cy="284" r="5" fill="var(--rust-soft)"/></g>
+        <g class="marker" id="m-2023"><circle cx="814.3" cy="133.6" r="5" fill="var(--teal)"/><text x="814.3" y="115" font-family="IBM Plex Mono" font-size="12" fill="var(--teal)" text-anchor="middle">2023</text><circle cx="814.3" cy="276" r="5" fill="var(--rust-soft)"/></g>
+        <g class="marker" id="m-2025"><circle cx="940" cy="132" r="6" fill="var(--teal)"/><text x="905" y="115" font-family="IBM Plex Mono" font-size="13" fill="var(--teal)" text-anchor="middle" font-weight="600">2025</text><circle cx="940" cy="272" r="5" fill="var(--rust-soft)"/></g>
+      </svg>
+      <div class="chart-legend">
+        <span><i style="background:var(--sand)"></i>Sebelum breakwater (gabungan)</span>
+        <span><i style="background:var(--teal)"></i>Sisi Barat — dekat aspal &amp; breakwater</span>
+        <span><i style="background:var(--rust-soft)"></i>Sisi Timur — belum terlindungi</span>
+      </div>
+      <div class="chart-caption">Posisi garis pantai relatif terhadap tahun 2008. Naik = pantai maju/pulih. Turun = pantai mundur akibat abrasi.</div>
+    </div>
+    <div class="steps">
+      <div class="step" data-step="1" data-reveal="seg-c0" data-marker="m-2008,m-2013" data-year="2008–2013">
+        <div class="yr">2008 → 2013</div>
+        <h4>Mundur ± 2 meter</h4>
+        <p>Sebelum ada pengaman apa pun, abrasi mulai menggerus garis pantai secara perlahan setiap musim ombak pasang.</p>
+      </div>
+      <div class="step" data-step="2" data-reveal="seg-c1" data-marker="m-2016" data-year="2013–2016">
+        <div class="yr">2013 → 2016</div>
+        <h4>Sempat maju ± 2 meter</h4>
+        <p>Ada periode pemulihan alami, namun sifatnya sementara — belum ada struktur permanen yang menahan abrasi berikutnya.</p>
+      </div>
+      <div class="step" data-step="3" data-reveal="seg-c2" data-marker="m-2017" data-year="2016–2017">
+        <div class="yr">2016 → 2017</div>
+        <h4>Mundur drastis, hampir 3 meter</h4>
+        <p>Titik abrasi terparah. Ombak pasang Desember menghantam keras, mengikis daratan dan mengancam rumah warga di bibir pantai. Ini titik yang memicu percepatan pembangunan pengaman pantai.</p>
+      </div>
+      <div class="step" data-step="4" data-reveal="seg-w0,seg-e0" data-marker="m-2019" data-year="2017–2019">
+        <div class="yr">2017 → 2019</div>
+        <h4>Garis pantai mulai terbelah dua cerita</h4>
+        <p>PUPR membangun aspal jalan inspeksi yang dimajukan ±15 meter dari garis pantai lama, lalu breakwater ditata di depannya. Di sisi Barat, pantai langsung maju ±5 meter. Sisi Timur yang belum tersentuh pembangunan tetap tertinggal.</p>
+      </div>
+      <div class="step" data-step="5" data-reveal="seg-w1,seg-e1" data-marker="m-2021" data-year="2019–2021">
+        <div class="yr">2019 → 2021</div>
+        <h4>Lompatan besar, maju 12–15 meter</h4>
+        <p>Dengan breakwater dan jalan inspeksi rampung, sedimen tertahan dan garis pantai Barat melonjak maju — capaian paling signifikan dalam seluruh periode pengamatan.</p>
+      </div>
+      <div class="step" data-step="6" data-reveal="seg-w2,seg-e2" data-marker="m-2023" data-year="2021–2023">
+        <div class="yr">2021 → 2023</div>
+        <h4>Perubahan kecil — mulai stabil</h4>
+        <p>Karena breakwater sudah selesai dan bekerja sesuai fungsinya, pergerakan garis pantai menyusut menjadi hanya sekian puluh sentimeter saja.</p>
+      </div>
+      <div class="step" data-step="7" data-reveal="seg-w3,seg-e3" data-marker="m-2025" data-year="2023–2025">
+        <div class="yr">2023 → 2025</div>
+        <h4>Stabil</h4>
+        <p>Garis pantai sisi Barat menetap di posisi amannya. Sisi Timur perlahan mulai pulih, tapi masih menyisakan jarak — pengingat bahwa perlindungan yang tidak menyeluruh menyisakan titik rawan.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-inner reveal" style="margin-top:60px;">
+    <div class="eyebrow">Dokumentasi Visual</div>
+    <h3 class="h2" style="font-size:clamp(1.6rem,3.4vw,2.2rem);">Rekaman perubahan garis pantai</h3>
+    <div class="figure" style="margin-top:26px;">
+      <div class="imgwrap" style="aspect-ratio:16/9;">
+        <video controls preload="metadata" playsinline style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;" onerror="this.parentElement.innerHTML='<div class=\'img-missing\'>assets/perubahangarispantai.mp4<br>— letakkan video citra garis pantai 2008–2025 di sini —</div>'">
+          <source src="assets/perubahangarispantai.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="cap">Perbandingan citra garis pantai Larantuka, 2008–2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2019 TURNING POINT / PUPR ============ -->
+<section class="section dark">
+  <div class="section-inner reveal">
+    <div class="mediarow rev">
+      <div class="figure">
+        <div class="imgwrap dark-frame">
+          <img src="assets/pembangunanpupr1.jpg" alt="Progres pembangunan pengaman Pantai Larantuka" onerror="this.parentElement.innerHTML='<div class=\'img-missing\'>assets/pembangunanpupr1.jpg<br>— letakkan foto pembangunan di sini —</div>'">
+        </div>
+        <div class="cap">Jalan inspeksi dan tembok revetment dalam proses pengerjaan</div>
+      </div>
+      <div>
+        <div class="eyebrow">Titik Balik</div>
+        <h2 class="h2">2019: aspal dimajukan, breakwater dibangun</h2>
+        <p class="lede" style="opacity:.9;">Setelah abrasi terparah pada 2016–2017, Kementerian PUPR lewat Balai Wilayah Sungai Nusa Tenggara II mempercepat pembangunan. Jalan inspeksi diaspal dan dimajukan sekitar 15 meter dari garis pantai lama — lalu susunan breakwater ditata di depannya sebagai tembok pertahanan pertama.</p>
+      </div>
+    </div>
+
+    <div class="timeline-2020 reveal">
+      <div class="tl-row">
+        <div><span class="yr">2016</span><span class="len">0,275 km</span></div>
+        <div class="desc">Tahap pertama pengaman pantai dibangun — awal dari upaya jangka panjang menahan abrasi Larantuka.</div>
+      </div>
+      <div class="tl-row">
+        <div><span class="yr">2017</span><span class="len">0,20 km</span></div>
+        <div class="desc">Perpanjangan struktur dilanjutkan tepat setelah tahun abrasi terparah.</div>
+      </div>
+      <div class="tl-row">
+        <div><span class="yr">2019</span><span class="len">0,20 km</span></div>
+        <div class="desc"><b>Momen kunci:</b> jalan inspeksi diaspal dan dimajukan ±15 meter dari garis pantai, breakwater dibangun di depannya — inilah yang memicu lonjakan pemulihan garis pantai sisi Barat.</div>
+      </div>
+      <div class="tl-row">
+        <div><span class="yr">2020</span><span class="len">0,80 km</span></div>
+        <div class="desc">Perluasan terbesar, di dua kelurahan sekaligus: Kelurahan Larantuka (0,30 km) dan Kelurahan Pantai Besar (0,50 km).</div>
+      </div>
+    </div>
+
+    <div class="factbox reveal">
+      <div class="eyebrow">Detail Proyek 2020</div>
+      <p style="margin-bottom:10px;">Pekerjaan tahap 2020 meliputi tembok revetment, timbunan penahan gelombang, dan jalan inspeksi selebar 10 meter, dengan anggaran sekitar <b>Rp 20,75 miliar</b> dari APBN. Dikerjakan oleh PT Putra Kencana KSO PT Yola Dana Tama dengan pengawasan CV Saba Consult, masa pelaksanaan 180 hari kalender.</p>
+      <p style="margin-bottom:0;">Per akhir Agustus 2020 progres tercatat 82,5%. Sempat ada pembongkaran ulang sepanjang 45 meter jalan inspeksi setelah uji daya dukung tanah belum memenuhi syarat — tanah digali ulang, ditimbun, dan dipadatkan sesuai spesifikasi sebelum dilanjutkan, dengan target selesai akhir November 2020.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAKTA LAPANGAN ============ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="mediarow">
+      <div>
+        <div class="eyebrow">Realita di Lapangan</div>
+        <h2 class="h2">Batu breakwater sering diam‑diam hilang</h2>
+        <p class="lede">Tanpa disadari dampaknya, batu‑batu pengaman ini kerap diambil untuk kebutuhan lain — padahal setiap batu punya peran teknis dalam susunannya.</p>
+        <ul class="reason-list">
+          <li>Diambil sebagai pemberat jaring atau bagan tancap.</li>
+          <li>Dianggap batu "tidak terpakai" karena jumlahnya terlihat banyak.</li>
+          <li>Belum banyak yang tahu fungsi teknis dari susunan batu ini.</li>
+        </ul>
+      </div>
+      <div class="figure">
+        <div class="imgwrap">
+          <img src="assets/ambilbatu.jpg" alt="Pengambilan batu breakwater oleh warga" onerror="this.parentElement.innerHTML='<div class=\'img-missing\'>assets/ambilbatu.jpg<br>— letakkan foto pengambilan batu di sini —</div>'">
+        </div>
+        <div class="cap">Batu pengaman yang diambil untuk keperluan lain</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RANTAI KERUSAKAN ============ -->
+<section class="section dark">
+  <div class="section-inner reveal">
+    <div class="eyebrow">Satu Batu, Empat Dampak Berantai</div>
+    <h2 class="h2">Bagaimana breakwater akhirnya rusak</h2>
+    <div class="cascade">
+      <div class="cas"><h4>Batu pengaman diambil nelayan</h4><p>Untuk dijadikan pemberat jaring, bagan tancap, atau jangkar dadakan.</p><span class="cas-arrow">→</span></div>
+      <div class="cas"><h4>Air dan sampah menumpuk di lubang bekas batu</h4><p>Rongga yang ditinggalkan menjadi jalan masuk air, sampah, dan erosi kecil yang terus membesar.</p><span class="cas-arrow">→</span></div>
+      <div class="cas"><h4>Gelombang langsung mengenai beton</h4><p>Tanpa lapisan batu pelindung, beton di baliknya menerima benturan penuh dan rawan retak atau pecah.</p><span class="cas-arrow">→</span></div>
+      <div class="cas"><h4>Breakwater rusak, gelombang mengenai masyarakat</h4><p>Fungsi peredam hilang — gelombang kembali menghantam talud, jalan, bahkan permukiman di baliknya.</p></div>
+    </div>
+    <div class="chain-note">
+      <b>Efek yang jarang terlihat:</b> air yang meresap lewat lubang bekas batu juga perlahan mengikis tanah di bawah aspal jalan inspeksi. Tanah yang tergerus menyebabkan penurunan permukaan (settlement), aspal retak dan pecah, hingga akhirnya talud ambruk dari bagian dalam — jauh sebelum kerusakan terlihat dari luar.
+    </div>
+  </div>
+</section>
+
+<!-- ============ DAMPAK BAGI NELAYAN ============ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="eyebrow">Bukan Sekadar Batu</div>
+    <h2 class="h2">Dampaknya kembali ke nelayan sendiri</h2>
+    <div class="impact-cols">
+      <div class="impact-col">
+        <h3>Kerugian materiil</h3>
+        <ul>
+          <li>Biaya perbaikan kapal meningkat akibat sering terhantam ombak.</li>
+          <li>Hasil tangkapan menurun karena ekosistem pesisir terganggu.</li>
+          <li>Waktu melaut berkurang saat cuaca ombak menjadi tidak menentu.</li>
+        </ul>
+      </div>
+      <div class="impact-col danger">
+        <h3>Ancaman keselamatan</h3>
+        <ul>
+          <li>Ombak yang tidak lagi teredam membahayakan kapal saat keluar‑masuk.</li>
+          <li>Risiko kecelakaan laut meningkat, terutama saat cuaca buruk.</li>
+          <li>Keselamatan keluarga dan permukiman di sekitar pesisir ikut terancam.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APA YANG BISA DILAKUKAN ============ -->
+<section class="section dark">
+  <div class="section-inner reveal">
+    <div class="eyebrow">Peran Kita Bersama</div>
+    <h2 class="h2">Apa yang bisa dilakukan mulai sekarang</h2>
+    <div class="action-grid">
+      <div class="action">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--sand)" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16" stroke-linecap="round"/></svg>
+        <h4>Gunakan alternatif pemberat</h4>
+        <p>Pakai pemberat jaring atau bagan dari beton cetak atau bahan lain — bukan batu breakwater.</p>
+      </div>
+      <div class="action">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--sand)" stroke-width="1.6"><path d="M4 4v16" stroke-linecap="round"/><path d="M4 5h13l-2 4 2 4H4" stroke-linejoin="round"/></svg>
+        <h4>Laporkan kerusakan</h4>
+        <p>Sampaikan ke aparat desa, dinas terkait, atau pengelola pelabuhan bila melihat breakwater rusak.</p>
+      </div>
+      <div class="action">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--sand)" stroke-width="1.6"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>
+        <h4>Awasi bersama</h4>
+        <p>Jadikan breakwater sebagai aset bersama yang dijaga oleh seluruh komunitas nelayan.</p>
+      </div>
+      <div class="action">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--sand)" stroke-width="1.6"><path d="M4 6h11a3 3 0 0 1 0 6H4z"/><path d="M8 12v6"/><path d="M4 18h8"/></svg>
+        <h4>Edukasi sesama nelayan</h4>
+        <p>Bagikan informasi ini ke rekan‑rekan nelayan lain agar semua memahami pentingnya breakwater.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PENANGANAN PERTAMA ============ -->
+<section class="section">
+  <div class="section-inner reveal">
+    <div class="eyebrow">Kalau Talud Sudah Terlanjur Rusak</div>
+    <h2 class="h2">Penanganan pertama</h2>
+    <p class="lede">Kerusakan tidak harus menunggu perbaikan besar dari pemerintah. Langkah awal ini bisa dilakukan lebih cepat oleh warga dan kelompok nelayan setempat.</p>
+    <div class="aid-steps">
+      <div class="aid"><h4>Amankan area</h4><p>Hentikan aktivitas di titik yang rusak dan pasang tanda peringatan sederhana agar tidak ada yang menambah beban di area tersebut.</p></div>
+      <div class="aid"><h4>Laporkan segera</h4><p>Sampaikan ke aparat desa, dinas terkait, atau pengelola pelabuhan agar kerusakan dapat diverifikasi dan masuk rencana perbaikan.</p></div>
+      <div class="aid"><h4>Tutup lubang sementara</h4><p>Isi rongga yang terbentuk dengan karung berisi tanah atau pasir untuk menahan laju erosi selagi menunggu perbaikan permanen.</p></div>
+      <div class="aid"><h4>Bangun APO sementara</h4><p>Bila kerusakan meluas dan perbaikan permanen belum bisa segera dilakukan, bangun Alat Pemecah Ombak (APO) sederhana dari ban bekas atau bambu, disesuaikan dengan karakter pesisir setempat.</p></div>
+      <div class="aid"><h4>Gotong royong dan rawat rutin</h4><p>Libatkan kelompok nelayan atau petani tambak setempat untuk membangun bersama, lalu jadwalkan perawatan rutin agar hasilnya bertahan lama.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APO ALTERNATIF ============ -->
+<section class="section dark">
+  <div class="section-inner reveal">
+    <div class="eyebrow">Solusi yang Bisa Dibangun Sendiri</div>
+    <h2 class="h2">Alat Pemecah Ombak (APO) dari ban bekas dan bambu</h2>
+    <p class="lede" style="opacity:.9;">Ketika perbaikan permanen belum bisa dilakukan segera, masyarakat pesisir di tempat lain — seperti di Semarang — sudah membuktikan bahwa APO sederhana dari ban bekas dan bambu mampu memberi perlindungan nyata sambil menunggu penanganan penuh.</p>
+    <div class="figure" style="margin-top:30px;">
+      <div class="imgwrap dark-frame">
+        <img src="assets/apo1.jpg" alt="Alat Pemecah Ombak dari ban bekas dan bambu" onerror="this.parentElement.innerHTML='<div class=\'img-missing\'>assets/apo1.jpg<br>— letakkan foto APO ban/bambu di sini —</div>'">
+      </div>
+      <div class="cap">Contoh APO ban bekas dan Hybrid Engineering bambu</div>
+    </div>
+    <div class="apo-grid">
+      <div class="apo-card">
+        <div class="tagline">Untuk pesisir berpasir</div>
+        <h3>APO ban bekas</h3>
+        <p>Ban bekas kendaraan disusun berlapis mengikuti garis pantai, lalu ruang tengahnya diisi karung tanah atau pasir agar tidak mudah bergeser. Cocok untuk melindungi tambak yang menghadap laut secara langsung.</p>
+        <ul>
+          <li>Dikerjakan bergotong royong oleh kelompok masyarakat — satu kelompok menyiapkan material, kelompok lain membangun.</li>
+          <li>Perawatan: tambah karung tanah secara berkala, pasang waring di sekelilingnya untuk menangkap sedimentasi.</li>
+        </ul>
+        <div class="apo-stat">
+          <div><b>±700 m</b><small>Contoh capaian pembangunan</small></div>
+          <div><b>1 th 2 bln</b><small>Estimasi waktu pengerjaan</small></div>
+        </div>
+      </div>
+      <div class="apo-card">
+        <div class="tagline">Untuk pesisir berlumpur</div>
+        <h3>Bambu — Hybrid Engineering</h3>
+        <p>Struktur permeable dari bambu dan ranting yang menangkap sedimen dari arus laut. Selain menahan abrasi, sedimen yang tertangkap menciptakan daratan baru yang bisa ditanami mangrove. Biayanya jauh lebih terjangkau dibanding APO ban.</p>
+        <ul>
+          <li>Perawatan: ganti bambu yang lapuk, ikat dengan kain limbah agar bertahan hingga sekitar 3 tahun.</li>
+          <li>Perlu jadwal kontrol rutin — HE kerap dijadikan tempat singgah oleh pencari ikan.</li>
+        </ul>
+        <div class="apo-stat">
+          <div><b>±200 m</b><small>Contoh capaian pembangunan</small></div>
+          <div><b>2 bln 1 mgg</b><small>Estimasi waktu pengerjaan</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="center-cta">
+      <p style="opacity:.75; max-width:60ch; margin:0 auto 20px;">Baik ban bekas maupun bambu bukan pengganti breakwater permanen — keduanya adalah jembatan perlindungan sambil menunggu penanganan penuh, sekaligus bukti bahwa masyarakat bisa berperan langsung menjaga pantainya sendiri.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="credit">Jaga Breakwater,<br>Jaga Laut dan Keselamatan Kita.</div>
+      <p style="opacity:.7; max-width:42ch;">Disusun sebagai media edukasi bagi warga dan nelayan pesisir Larantuka, Flores Timur.</p>
+    </div>
+    <div>
+      <h4>Program</h4>
+      <ul>
+        <li>KKN‑PPM UGM</li>
+        <li>Romantika Larantuka</li>
+        <li>Flores Timur, NTT</li>
+      </ul>
+    </div>
+    <div>
+      <h4>Sumber</h4>
+      <ul>
+        <li>Kementerian PUPR — Ditjen Sumber Daya Air</li>
+        <li>Jurnal Wilayah dan Lingkungan, Vol. 4(3), 2016</li>
+        <li>Dokumentasi lapangan tim KKN‑PPM UGM</li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom-rule">
+    <span>© KKN‑PPM UGM Romantika Larantuka</span>
+    <span>Struktur Pelindung Pantai — Storymap Edukasi</span>
+  </div>
+</footer>
+
+<script>
+// Progress bar + nav year
+const progress = document.getElementById('progress');
+const navyear = document.getElementById('navyear');
+function onScroll(){
+  const h = document.documentElement;
+  const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+  progress.style.width = scrolled + '%';
+}
+document.addEventListener('scroll', onScroll, {passive:true});
+onScroll();
+
+// Reveal on scroll
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('is-visible'); } });
+},{threshold:0.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Image error fallback safety net (in case inline onerror missed, e.g. cached)
+document.querySelectorAll('img').forEach(img=>{
+  img.addEventListener('error', function(){
+    if(this.parentElement && !this.parentElement.querySelector('.img-missing')){
+      this.style.display='none';
+      const d=document.createElement('div');
+      d.className='img-missing';
+      d.textContent = this.getAttribute('src') + ' — file belum ditambahkan';
+      this.parentElement.appendChild(d);
+    }
+  });
+});
+
+// Scrollytelling chart
+const steps = document.querySelectorAll('.step');
+const yearLabels = {1:'2013',2:'2016',3:'2017',4:'2019',5:'2021',6:'2023',7:'2025'};
+const stepObserver = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    const step = entry.target;
+    if(entry.isIntersecting && entry.intersectionRatio > 0.5){
+      steps.forEach(s=>s.classList.remove('active'));
+      step.classList.add('active');
+      const idx = parseInt(step.dataset.step,10);
+      navyear.textContent = yearLabels[idx] || '2008';
+
+      // reveal all segments up to and including this step
+      steps.forEach((s)=>{
+        const sIdx = parseInt(s.dataset.step,10);
+        if(sIdx <= idx){
+          s.dataset.reveal.split(',').forEach(id=>{
+            const el = document.getElementById(id);
+            if(el) el.style.strokeDashoffset = 0;
+          });
+          s.dataset.marker.split(',').forEach(id=>{
+            const el = document.getElementById(id);
+            if(el) el.classList.add('on');
+          });
+        }
+      });
+    }
+  });
+},{threshold:[0,0.5,1], rootMargin:'-20% 0px -20% 0px'});
+steps.forEach(s=>stepObserver.observe(s));
+</script>
+</body>
+</html>
